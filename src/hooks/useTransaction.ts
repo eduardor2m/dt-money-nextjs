@@ -17,9 +17,20 @@ const ListAll = () => {
   return useQuery([QUERY_KEY], () => ApiTransaction.listAll())
 }
 
+const Delete = () => {
+  const queryClient = useQueryClient()
+
+  return useMutation(ApiTransaction.delete, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(QUERY_KEY)
+    }
+  })
+}
+
 export const useTransaction = {
     Create,
     ListAll,
+    Delete
 }
 
 /*

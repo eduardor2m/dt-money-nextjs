@@ -7,6 +7,7 @@ import { Table } from "@/components/Table";
 import { use, useEffect, useState } from "react";
 import { FormModal } from "@/components/FormModal";
 import { useTransaction } from "@/hooks/useTransaction";
+import { Warning } from "@/components/Warning";
 
 const oldTransactions: ITransaction[] = [
   {
